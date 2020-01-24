@@ -1,4 +1,4 @@
-# mmepnas
+# MFAS: Multimodal Fusion Architecture Search
 
 
 ## This code
