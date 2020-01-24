@@ -5,7 +5,7 @@
 
 This is an implementation of the paper:
 
-
+```
 @inproceedings{perez2019mfas,
   title={Mfas: Multimodal fusion architecture search},
   author={P{\'e}rez-R{\'u}a, Juan-Manuel and Vielzeuf, Valentin and Pateux, St{\'e}phane and Baccouche, Moez and Jurie, Fr{\'e}d{\'e}ric},
@@ -13,7 +13,7 @@ This is an implementation of the paper:
   pages={6966--6975},
   year={2019}
 }
-
+```
 
 ## Usage
 
