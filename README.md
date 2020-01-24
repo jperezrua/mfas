@@ -35,5 +35,9 @@ python main_found_ntu.py --datadir ../../Data/NTU --checkpointdir ../../Data/NTU
 
 Of course, set your own Data and Checkpoints directories.
 
+## Download the pretrained checkpoints
+
+We provide pretrained backbones for RGB and skeleton modalities as well as some pretrained found architectures in here: (link)[https://drive.google.com/open?id=1wcIepkmCf2NRfnhXVdoNu6wSxkpZmMNm]
+
 
 
