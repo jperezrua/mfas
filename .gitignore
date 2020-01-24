@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# code mfas
+*__pycache__*
+__pycache__/
