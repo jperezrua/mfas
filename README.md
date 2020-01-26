@@ -17,8 +17,7 @@ This is an implementation of the paper:
 
 ## Usage
 
-We focus on the NTU experiments in this repo. The file `main_found_ntu.py` is used to train and test architectures that were already found.
-You can modify it a little bit to test any single arch. from the NTU search space.
+We focus on the NTU experiments in this repo. The file `main_found_ntu.py` is used to train and test architectures that were already found. Pick one of them by using the `--conf N` argument. This script should be easy to modify if you want to try other architectures.
 
 Our best found architecture on NTU is slightly different to the one reported in the paper,
 it can be tested like so:
