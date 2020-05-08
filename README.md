@@ -1,3 +1,5 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mfas-multimodal-fusion-architecture-search-1/action-recognition-in-videos-on-ntu-rgbd)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ntu-rgbd?p=mfas-multimodal-fusion-architecture-search-1)
+
 # MFAS: Multimodal Fusion Architecture Search
 
 
