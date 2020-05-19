@@ -7,7 +7,7 @@
 
 #%%
 import torch
-import models.aux.scheduler as sc
+import models.auxiliary.scheduler as sc
 import copy
 
 #%% for simple multimodal

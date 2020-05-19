@@ -8,9 +8,9 @@
 #%%
 import torch
 import torch.nn as nn
-import models.aux.aux_models as aux
+import models.auxiliary.aux_models as aux
 import numpy as np
-import models.aux.scheduler as sc
+import models.auxiliary.scheduler as sc
 import models.search.train_searchable.cifar as tr
 import torch.optim as op
 

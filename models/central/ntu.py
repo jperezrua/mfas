@@ -9,7 +9,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import models.aux.inflated_resnet as resnet
+import models.auxiliary.inflated_resnet as resnet
 import models.utils as utils
 
 #%%
