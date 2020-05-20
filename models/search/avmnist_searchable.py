@@ -11,8 +11,8 @@ import torch.nn as nn
 import torch.optim as op
 import os
 
-import models.aux.scheduler as sc
-import models.aux.aux_models as aux
+import models.auxiliary.scheduler as sc
+import models.auxiliary.aux_models as aux
 import models.central.avmnist as avmnist
 import models.search.train_searchable.avmnist as tr    
 

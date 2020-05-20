@@ -10,7 +10,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.autograd as A
-import models.aux.aux_models as aux
+import models.auxiliary.aux_models as aux
 #%%
 
 class GP_LeNet(nn.Module):

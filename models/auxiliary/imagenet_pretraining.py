@@ -1,5 +1,5 @@
 import torch.utils.model_zoo as model_zoo
-from models.aux.resnet.resnet import model_urls
+from models.auxiliary.resnet.resnet import model_urls
 import torch
 
 def _inflate_weight(w, new_temporal_size, inflation='center'):
