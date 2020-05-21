@@ -105,6 +105,7 @@ class ResNet(nn.Module):
 
         return fm1, fm2, fm3, final_fm
 
+
 def transform_input(x, dim, T=12):
     diff = len(x.size()) - dim
 
