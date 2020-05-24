@@ -2,9 +2,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class activ(nn.Module):
     def __init__(self, args):
-        super(activ,self).__init__()
+        super(activ, self).__init__()
         self.activation = args.activation
         if args.activation == "LeakyReLU":
             self.act = torch.nn.LeakyReLU()
@@ -24,8 +25,6 @@ class activ(nn.Module):
 
     def forward(self, x):
         if self.activation == "Swish":
-            return self.act(self.beta*x)*x
+            return self.act(self.beta * x) * x
         else:
             return self.act(x)
-
-

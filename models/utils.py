@@ -2,6 +2,7 @@ import torch
 import numpy as np
 import random
 
+
 # use the next 3 functions to initial a model, eg at the third function
 def weights_init(m):
     classname = m.__class__.__name__
@@ -55,8 +56,11 @@ def initial_model_weight(layers):
             for sub_layer in list(layer.children()):
                 initial_model_weight([sub_layer])
 
-#%%
+
+# %%
 import matplotlib.pyplot as plot
+
+
 class Cutout(object):
     # https://github.com/uoguelph-mlrg/Cutout/blob/master/util/cutout.py
     """Randomly mask out one or more patches from an image.
@@ -64,6 +68,7 @@ class Cutout(object):
         n_holes (int): Number of patches to cut out of each image.
         length (int): The length (in pixels) of each square patch.
     """
+
     def __init__(self, n_holes, length):
         self.n_holes = n_holes
         self.length = length
@@ -81,8 +86,8 @@ class Cutout(object):
         mask = np.ones((h, w), np.float32)
 
         for n in range(self.n_holes):
-            y = random.randint(0,h-1)
-            x = random.randint(0,w-1)
+            y = random.randint(0, h - 1)
+            x = random.randint(0, w - 1)
 
             y1 = np.clip(y - self.length // 2, 0, h)
             y2 = np.clip(y + self.length // 2, 0, h)
@@ -94,16 +99,16 @@ class Cutout(object):
         mask = torch.from_numpy(mask)
         mask = mask.expand_as(img)
         img = img * mask
-        #i = np.transpose(img.cpu().numpy(), (1,2,0))
-        #i[:,:,0] *= 0.2023
-        #i[:,:,1] *= 0.1994
-        #i[:,:,2] *= 0.2010        
-        #i[:,:,0] += 0.4914
-        #i[:,:,1] += 0.4822
-        #i[:,:,2] += 0.4465
-        #print(i.shape)
-        #plot.imshow(i)
-        #plot.imsave('aa{}.png'.format(random.randint(0,100)), i)
+        # i = np.transpose(img.cpu().numpy(), (1,2,0))
+        # i[:,:,0] *= 0.2023
+        # i[:,:,1] *= 0.1994
+        # i[:,:,2] *= 0.2010
+        # i[:,:,0] += 0.4914
+        # i[:,:,1] += 0.4822
+        # i[:,:,2] += 0.4465
+        # print(i.shape)
+        # plot.imshow(i)
+        # plot.imsave('aa{}.png'.format(random.randint(0,100)), i)
 
         return img
 

@@ -2,6 +2,7 @@ import torch.utils.model_zoo as model_zoo
 from models.auxiliary.resnet.resnet import model_urls
 import torch
 
+
 def _inflate_weight(w, new_temporal_size, inflation='center'):
     w_up = w.unsqueeze(2).repeat(1, 1, new_temporal_size, 1, 1)
     if inflation == 'center':
@@ -21,21 +22,22 @@ def central_inflate_3D_conv(w):
         w[:, :, after] = torch.zeros_like(w[:, :, after])
     return w
 
+
 def _update_pretrained_weights(model, pretrained_W, inflation='center'):
     pretrained_W_updated = pretrained_W.copy()
     model_dict = model.state_dict()
     for k, v in pretrained_W.items():
         if k in model_dict.keys():
-                if len(model_dict[k].shape) == 5:
-                    new_temporal_size = model_dict[k].size(2)
-                    v_updated = _inflate_weight(v, new_temporal_size, inflation)
-                else:
-                    v_updated = v
+            if len(model_dict[k].shape) == 5:
+                new_temporal_size = model_dict[k].size(2)
+                v_updated = _inflate_weight(v, new_temporal_size, inflation)
+            else:
+                v_updated = v
 
-                if isinstance(v, torch.autograd.Variable):
-                    pretrained_W_updated.update({k: v_updated.data})
-                else:
-                    pretrained_W_updated.update({k: v_updated})
+            if isinstance(v, torch.autograd.Variable):
+                pretrained_W_updated.update({k: v_updated.data})
+            else:
+                pretrained_W_updated.update({k: v_updated})
         elif "fc.weight" in k:
             pretrained_W_updated.pop('fc.weight', None)
         elif "fc.bias" in k:
